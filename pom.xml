@@ -37,6 +37,7 @@
         <module>spring-boot-demo-rbac-security</module>
         <module>spring-boot-demo-rbac-shiro</module>
         <module>spring-boot-demo-session</module>
+        <module>spring-boot-demo-oauth</module>
         <module>spring-boot-demo-social</module>
         <module>spring-boot-demo-zookeeper</module>
         <module>spring-boot-demo-mq-rabbitmq</module>
@@ -55,6 +56,10 @@
         <module>spring-boot-demo-mongodb</module>
         <module>spring-boot-demo-neo4j</module>
         <module>spring-boot-demo-docker</module>
+        <module>spring-boot-demo-multi-datasource-jpa</module>
+        <module>spring-boot-demo-multi-datasource-mybatis</module>
+        <module>spring-boot-demo-sharding-jdbc</module>
+        <module>spring-boot-demo-tio</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -69,8 +74,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
         <mysql.version>8.0.12</mysql.version>
-        <hutool.version>4.3.1</hutool.version>
-        <guava.version>27.0-jre</guava.version>
+        <hutool.version>4.4.5</hutool.version>
+        <guava.version>27.0.1-jre</guava.version>
         <user.agent.version>1.20</user.agent.version>
     </properties>
 

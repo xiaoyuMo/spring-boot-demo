@@ -2,7 +2,9 @@
 
 [![MIT](https://img.shields.io/github/license/xkcoding/spring-boot-demo.svg)](https://github.com/xkcoding/spring-boot-demo/blob/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/xkcoding/spring-boot-demo.svg?style=flat&label=Star)](https://github.com/xkcoding/spring-boot-demo/stargazers) [![GitHub forks](https://img.shields.io/github/forks/xkcoding/spring-boot-demo.svg?style=flat&label=Fork)](https://github.com/xkcoding/spring-boot-demo/fork) [![GitHub watchers](https://img.shields.io/github/watchers/xkcoding/spring-boot-demo.svg?style=flat&label=Watch)](https://github.com/xkcoding/spring-boot-demo/watchers)
 
-spring boot demo 是一个用来学习 spring boot 的项目，总共包含 **`47`** 个集成demo，已经完成 **`35`** 个。包含集成 actuator(监控)、admin(可视化监控)、logback(日志)、aopLog(通过AOP记录web请求日志)、统一异常处理(json级别和页面级别)、freemarker(模板引擎)、thymeleaf(模板引擎)、Beetl(模板引擎)、Enjoy(模板引擎)、JdbcTemplate、JPA(ORM框架)、mybatis(ORM框架)、通用Mapper、PageHelper、mybatis-plus、BeetlSQL、upload(本地文件上传和七牛云文件上传)、redis(缓存)、ehcache(缓存)、email(发送各种类型邮件)、task(基础定时任务)、quartz(动态管理定时任务)、swagger(API接口管理测试)、security(基于RBAC的动态权限认证)、Session共享、websocket(服务端推送监控服务器运行信息)、socket.io(聊天室)、ureport2(中国式报表)、打包成war文件、集成 ElasticSearch(基本操作和高级查询)、集成Dubbo(采用官方的starter)、neo4j(图数据库)、docker(容器化)。
+spring boot demo 是一个用来学习 spring boot 的项目，总共包含 **`52`** 个集成demo，已经完成 **`42`** 个。包含集成 actuator(监控)、admin(可视化监控)、logback(日志)、aopLog(通过AOP记录web请求日志)、统一异常处理(json级别和页面级别)、freemarker(模板引擎)、thymeleaf(模板引擎)、Beetl(模板引擎)、Enjoy(模板引擎)、JdbcTemplate、JPA(ORM框架)、mybatis(ORM框架)、通用Mapper、PageHelper、mybatis-plus、BeetlSQL、upload(本地文件上传和七牛云文件上传)、redis(缓存)、ehcache(缓存)、email(发送各种类型邮件)、task(基础定时任务)、quartz(动态管理定时任务)、swagger(API接口管理测试)、security(基于RBAC的动态权限认证)、Session共享、Zookeeper(结合AOP实现分布式锁)、RabbitMQ(消息队列)、websocket(服务端推送监控服务器运行信息)、socket.io(聊天室)、ureport2(中国式报表)、打包成war文件、集成 ElasticSearch(基本操作和高级查询)、Async(异步任务)、集成Dubbo(采用官方的starter)、MongoDB(文档数据库)、neo4j(图数据库)、docker(容器化)、JPA多数据源、Mybatis多数据源。
+
+> 如果大家还有想要集成的demo，也可在 [issue](https://github.com/xkcoding/spring-boot-demo/issues/new) 里提需求。我会额外添加在 [TODO](./TODO.md) 列表里。✊
 
 ### 分支
 
@@ -13,7 +15,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，总共包含 **`4
 
 - **JDK1.8 +**
 - **Maven 3.5 +**
-- **IntelliJ IDEA ULTIMATE 2018.2 +**
+- **IntelliJ IDEA ULTIMATE 2018.2 +** (注意：务必使用 IDEA 开发，同时保证安装 `lombok` 插件)
 - **mysql 5.7 +** (*尽量5.7版本以上，因为5.7版本加了一些新特性，不向下兼容。本demo里会尽量避免这种不兼容的地方，但还是建议尽量保证5.7版本以上*)
 
 ### 运行方式
@@ -70,14 +72,30 @@ spring boot demo 是一个用来学习 spring boot 的项目，总共包含 **`4
         <module>spring-boot-demo-swagger</module>
         <module>spring-boot-demo-swagger-beauty</module>
         <module>spring-boot-demo-rbac-security</module>
+        <module>spring-boot-demo-rbac-shiro</module>
         <module>spring-boot-demo-session</module>
+        <module>spring-boot-demo-oauth</module>
+        <module>spring-boot-demo-social</module>
+        <module>spring-boot-demo-zookeeper</module>
+        <module>spring-boot-demo-mq-rabbitmq</module>
+        <module>spring-boot-demo-mq-rocketmq</module>
+        <module>spring-boot-demo-mq-kafka</module>
         <module>spring-boot-demo-websocket</module>
         <module>spring-boot-demo-websocket-socketio</module>
+        <module>spring-boot-demo-ureport2</module>
+        <module>spring-boot-demo-uflo</module>
+        <module>spring-boot-demo-urule</module>
+        <module>spring-boot-demo-activiti</module>
+        <module>spring-boot-demo-async</module>
         <module>spring-boot-demo-dubbo</module>
         <module>spring-boot-demo-war</module>
         <module>spring-boot-demo-elasticsearch</module>
+        <module>spring-boot-demo-mongodb</module>
         <module>spring-boot-demo-neo4j</module>
         <module>spring-boot-demo-docker</module>
+        <module>spring-boot-demo-multi-datasource-jpa</module>
+        <module>spring-boot-demo-multi-datasource-mybatis</module>
+        <module>spring-boot-demo-sharding-jdbc</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -92,7 +110,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，总共包含 **`4
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
         <mysql.version>8.0.12</mysql.version>
-        <hutool.version>4.3.1</hutool.version>
+        <hutool.version>4.4.0</hutool.version>
         <guava.version>27.0-jre</guava.version>
         <user.agent.version>1.20</user.agent.version>
     </properties>
@@ -214,24 +232,29 @@ spring boot demo 是一个用来学习 spring boot 的项目，总共包含 **`4
 | [spring-boot-demo-rbac-security](./spring-boot-demo-rbac-security) | spring-boot 集成 spring security 完成基于RBAC权限模型的权限管理，支持自定义过滤请求，动态权限认证，使用 JWT 安全认证，支持在线人数统计，手动踢出用户等操作 |
 | [spring-boot-demo-rbac-shiro](./spring-boot-demo-rbac-shiro) | <span style="color:pink;">待完成</span>                      |
 | [spring-boot-demo-session](./spring-boot-demo-session)       | spring-boot 集成 Spring Session 实现Session共享、重启程序Session不失效 |
+| [spring-boot-demo-oauth](./spring-boot-demo-oauth)           | <span style="color:pink;">待完成</span>                      |
 | [spring-boot-demo-social](./spring-boot-demo-social)         | <span style="color:pink;">待完成</span>                      |
-| [spring-boot-demo-zookeeper](./spring-boot-demo-zookeeper)   | <span style="color:pink;">待完成</span>                      |
-| [spring-boot-demo-mq-rabbitmq](./spring-boot-demo-mq-rabbitmq) | <span style="color:pink;">待完成</span>                      |
+| [spring-boot-demo-zookeeper](./spring-boot-demo-zookeeper)   | spring-boot 集成 Zookeeper 结合AOP实现分布式锁               |
+| [spring-boot-demo-mq-rabbitmq](./spring-boot-demo-mq-rabbitmq) | spring-boot 集成 RabbitMQ 实现基于直接队列模式、分列模式、主题模式、延迟队列的消息发送和接收 |
 | [spring-boot-demo-mq-rocketmq](./spring-boot-demo-mq-rocketmq) | <span style="color:pink;">待完成</span>                      |
-| [spring-boot-demo-mq-kafka](./spring-boot-demo-mq-kafka)     | <span style="color:pink;">待完成</span>                      |
+| [spring-boot-demo-mq-kafka](./spring-boot-demo-mq-kafka)     | spring-boot 集成 kafka，实现消息的发送和接收                 |
 | [spring-boot-demo-websocket](./spring-boot-demo-websocket)   | spring-boot 集成 websocket，后端主动推送前端服务器运行信息   |
 | [spring-boot-demo-websocket-socketio](./spring-boot-demo-websocket-socketio) | spring-boot 使用 netty-socketio 集成 websocket，实现一个简单的聊天室 |
 | [spring-boot-demo-ureport2](./spring-boot-demo-ureport2)     | <span style="color:pink;">待完成</span>                      |
 | [spring-boot-demo-uflo](./spring-boot-demo-uflo)             | <span style="color:pink;">待完成</span>                      |
 | [spring-boot-demo-urule](./spring-boot-demo-urule)           | <span style="color:pink;">待完成</span>                      |
 | [spring-boot-demo-activiti](./spring-boot-demo-activiti)     | <span style="color:pink;">待完成</span>                      |
-| [spring-boot-demo-async](./spring-boot-demo-async)           | <span style="color:pink;">待完成</span>                      |
+| [spring-boot-demo-async](./spring-boot-demo-async)           | spring-boot 使用原生提供的异步任务支持，实现异步执行任务     |
 | [spring-boot-demo-war](./spring-boot-demo-war)               | spring-boot 打成 war 包的配置                                |
 | [spring-boot-demo-elasticsearch](./spring-boot-demo-elasticsearch) | spring-boot 集成 ElasticSearch，集成 `spring-boot-starter-data-elasticsearch` 完成对 ElasticSearch 的高级使用技巧，包括创建索引、配置映射、删除索引、增删改查基本操作、复杂查询、高级查询、聚合查询等 |
 | [spring-boot-demo-dubbo](./spring-boot-demo-dubbo)           | spring-boot 集成 Dubbo，分别为公共模块 `spring-boot-demo-dubbo-common`、服务提供方`spring-boot-demo-dubbo-provider`、服务调用方`spring-boot-demo-dubbo-consumer` |
-| [spring-boot-demo-mongodb](./spring-boot-demo-mongodb)       | <span style="color:pink;">待完成</span>                      |
+| [spring-boot-demo-mongodb](./spring-boot-demo-mongodb)       | spring-boot 集成 MongoDB，使用官方的 starter 实现增删改查    |
 | [spring-boot-demo-neo4j](./spring-boot-demo-neo4j)           | spring-boot 集成 Neo4j 图数据库，实现一个校园人物关系网的demo |
 | [spring-boot-demo-docker](./spring-boot-demo-docker)         | spring-boot 容器化                                           |
+| [spring-boot-demo-multi-datasource-jpa](./spring-boot-demo-multi-datasource-jpa) | spring-boot 使用JPA集成多数据源                              |
+| [spring-boot-demo-multi-datasource-mybatis](./spring-boot-demo-multi-datasource-mybatis) | spring-boot 使用Mybatis集成多数据源，使用 Mybatis-Plus 提供的开源解决方案实现 |
+| [spring-boot-demo-sharding-jdbc](./spring-boot-demo-sharding-jdbc) | spring-boot 使用 sharding-jdbc 实现分库分表<span style="color:pink;">待完成</span> |
+| [spring-boot-demo-tio](./spring-boot-demo-tio)               | spring-boot 集成 tio <span style="color:pink;">待完成</span> |
 
 # 官方提供的 starter 介绍
 
